@@ -6,7 +6,7 @@ import time
 import capsolver
 
 # Initialize capsolver with your API key
-capsolver.api_key = "CAP-XXX"
+capsolver.api_key = "CAP-C820A8D198A9A3C98B9AA35C29328218"
 
 # Load the inject.js file content
 with open("inject.js", "r", encoding="utf-8") as f:
@@ -16,8 +16,8 @@ with open("inject.js", "r", encoding="utf-8") as f:
         # Solve the Turnstile CAPTCHA
         solution = capsolver.solve({
             "type": "AntiTurnstileTaskProxyLess",  # Required. Use 'AntiTurnstileTask' if using proxies or 'AntiTurnstileTaskProxyLess' if not.
-            "websiteKey": "0x4AAAAAAAFstVbzplF7A4pv",  # Required. The public key of the domain, often called the 'site key.'
-            "websiteURL": "https://dashboard.capsolver.com/passport/login",  # Required. The URL where the CAPTCHA is located.
+            "websiteKey": "0x4AAAAAAADnPIDROrmt1Wwj",  # Required. The public key of the domain, often called the 'site key.'
+            "websiteURL": "https://comforttradingsltd.com/",  # Required. The URL where the CAPTCHA is located.
         })
 
         token = solution.get('token')
@@ -36,7 +36,7 @@ with open("inject.js", "r", encoding="utf-8") as f:
 
 
         # Navigate to the target page
-        driver.get("https://dashboard.capsolver.com/passport/login")
+        driver.get("https://comforttradingsltd.com/")
 
         # Wait for the CAPTCHA response input
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "cf-turnstile-response")))
